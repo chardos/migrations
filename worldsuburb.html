@@ -1,91 +1,54 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
   <title>Migrations</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF8">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/rangeslider-govhack.css">
+  <link rel="stylesheet" href="css/ion.rangeSlider.css">
+  <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
   <script src="js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
-  <!-- <script src="js/worldsuburb.js"></script> -->
+  <script src="js/controls.js"></script>
+  <script src="js/d3.js"></script>
+  <script src="js/topojsonyuri.js"></script>
+  <script src="js/datamaps.world.js"></script>
+  <script src="js/country-coords.js"></script>
+  <script src="js/worldsuburb.js"></script>
+  <script src="js/ion.rangeSlider.js"></script>
 </head>
 <body>
   <div id="container">
     <div id='logo_section'>
-      <img src="./images/logo.jpg"/>
+      <img src="./img/logo.jpg"/>
     </div>
     <div id='cssmenu'>
     <ul>
-      <li>
+      <li class='last'>
         <a href='index.html'><span>World</span><br/><span class="menu_to_it">to</span><br/><span>Australia</span></a>
       </li>
       <li>
         <a href='worldstate.html'><span>World</span><br/><span class="menu_to_it">to</span><br/><span>State</span></a>
       </li>
-      <li>
+      <!--<li>
         <a href='statestate.html'><span>State</span><br/><span class="menu_to_it">to</span><br/><span>State</span></a>
-      </li>
-      <li class='last active'>
+      </li>-->
+      <li class='active'>
         <a href='worldsuburb.html'><span>World</span><br/><span class="menu_to_it">to</span><br/><span>Suburb</span></a>
       </li>
     </ul>
     </div>
     <div id="year_slider">
-
-    </div>
-    <div id="map_container">
-      <div id="map">
-        <script>
-          var width = 960,
-          height = 600;
-
-          var rateById = d3.map();
-
-          var quantize = d3.scale.quantize()
-              .domain([0, .15])
-              .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
-
-          var projection = d3.geo.albersUsa()
-              .scale(1280)
-              .translate([width / 2, height / 2]);
-
-          var path = d3.geo.path()
-              .projection(projection);
-
-          var svg = d3.select("body").append("svg")
-              .attr("width", width)
-              .attr("height", height);
-
-          queue()
-              .defer(d3.json, "../json/australia-states.json")
-              // .defer(d3.tsv, "unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
-              .await(ready);
-
-          function ready(error, us) {
-            if (error) throw error;
-
-            svg.append("g")
-                .attr("class", "counties")
-              .selectAll("path")
-                .data(topojson.feature(us, us.objects.counties).features)
-              .enter().append("path")
-                .attr("class", function(d) { return quantize(rateById.get(d.id)); })
-                .attr("d", path);
-
-            svg.append("path")
-                .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-                .attr("class", "states")
-                .attr("d", path);
-          }
-
-          d3.select(self.frameElement).style("height", height + "px");
-        </script>
+      <div id="year_slider_ion_container">
+        <input id="year_slider_ion"/>
       </div>
     </div>
+    <div id="map_container">
+      <svg></svg>
+    </div>
   </div>
-   
 </body>
 </html>

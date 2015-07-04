@@ -24,7 +24,7 @@ $(document).ready(function() {
     projection: 'mercator',
     
     fills: {
-      defaultFill: "#262626"
+      defaultFill: "RGBA(38, 38, 38, 1)"
     },
     
     data: {
@@ -44,6 +44,7 @@ $(document).ready(function() {
 
 
     geographyConfig: {
+      highlightColor: 'RGBA(252, 99, 51, 1)',
       highlightBorderColor: '#ffffff',
       popupTemplate: function(geo, data) {
         if (data){

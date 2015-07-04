@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,11 +14,10 @@
   <script src="js/jquery.js"></script>
   <script src="js/controls.js"></script>
   <script src="js/d3.js"></script>
-  <script src="js/topojson.js"></script>
+  <script src="js/topojsonyuri.js"></script>
   <script src="js/datamaps.world.js"></script>
   <script src="js/country-coords.js"></script>
-  <script src="js/countryData.js"></script>
-  <script src="js/worldaus.js"></script>
+  <script src="js/worldsuburb.js"></script>
   <script src="js/ion.rangeSlider.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
     </div>
     <div id='cssmenu'>
     <ul>
-      <li>
+      <li class='last'>
         <a href='index.html'><span>World</span><br/><span class="menu_to_it">to</span><br/><span>Australia</span></a>
       </li>
       <li>
@@ -36,7 +36,7 @@
       <!--<li>
         <a href='statestate.html'><span>State</span><br/><span class="menu_to_it">to</span><br/><span>State</span></a>
       </li>-->
-      <li class='last active'>
+      <li class='active'>
         <a href='worldsuburb.html'><span>World</span><br/><span class="menu_to_it">to</span><br/><span>Suburb</span></a>
       </li>
     </ul>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div id="map_container">
-      <div id="map"></div>
+      <svg></svg>
     </div>
   </div>
 </body>

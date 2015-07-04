@@ -53,13 +53,6 @@ function triggerActive(selectedButton) {
 }
 
 $(document).ready(function() {
-  $("#year_slider_ion").ionRangeSlider({
-    onChange: function (data) {
-      W.vars.year = data.from;
-      pullDataAccordingToOptions();
-    }
-  });
-
   setupStateButtonActivation();
   $('a.btn', $($('#states_selection')[0].children[0])).click();
   var migrationMap = new Datamap({

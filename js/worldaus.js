@@ -29,16 +29,22 @@ $(document).ready(function() {
     
     data: {
       AUS: {
-        fillKey: 'LOW',
-        numberOfThings: 2002
+        y1996: 2002,
+        y2001: 221312312,
+        y2006: 2312321,
+        y2011: 21312412
       },
       USA: {
-        fillKey: 'MEDIUM',
-        numberOfThings: 10381
+        y1996: 2002,
+        y2001: 221312312,
+        y2006: 2312321,
+        y2011: 21312412
       },
       GBR: {
-        fillKey: 'MEDIUM',
-        numberOfThings: 10381
+        y1996: 2002,
+        y2001: 221312312,
+        y2006: 2312321,
+        y2011: 21312412
       }
     },
 
@@ -48,7 +54,7 @@ $(document).ready(function() {
       highlightBorderColor: '#ffffff',
       popupTemplate: function(geo, data) {
         if (data){
-          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.numberOfThings + ' </div>'
+          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.y1996 + ' </div>'
         } else {
           return '<div class="hoverinfo">' + geo.properties.name + '</div>'
         }
@@ -60,9 +66,12 @@ $(document).ready(function() {
 
   migrationMap.arc( path1996 );
 
-
   window.addEventListener('resize', function() {
       migrationMap.resize();
   });
+
+  window.setInterval(function() {
+    migrationMap.arc (path2001);
+  }, 2000);
 
 });

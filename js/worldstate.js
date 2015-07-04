@@ -14,6 +14,20 @@ W.init = function() {
 var arcWidth = [3,2,5,7];
 var arcColor = null;
 
+function setupStateButtonActivation() {
+  $('#states_selection > li > a.btn').click(function(){
+    var selectedButton = $(this);
+    selectedButton.toggleClass( "active" );
+    $('#states_selection').each(function () { 
+      var listitem = $(this);
+      var thechild = $('a.btn', listitem); // get the button link
+      if(thechild == selectedButton)
+        return true;
+
+      selectedButton.toggleClass( "active" );
+    });
+  });
+}
 
 $(document).ready(function() {
 

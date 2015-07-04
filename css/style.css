@@ -36,6 +36,11 @@
   margin: auto;
 }
 
+#states_section {
+  background-color: #1f1f1f;
+  text-align: center;
+}
+
 
 /* -----------------HEADER------------------- */
 

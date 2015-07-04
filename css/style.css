@@ -17,6 +17,11 @@
   background-color: #282828;
 }
 
+#logo_section {
+  background: #101010;
+  text-align: center;
+}
+
 #year_slider {
   width: 100%;
   height: 80px;

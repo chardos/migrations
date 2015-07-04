@@ -40,11 +40,15 @@ $(document).ready(function() {
 
 
     geographyConfig: {
+      highlightBorderColor: '#bada55',
       popupTemplate: function(geo, data) {
-          if(data){
-            return ['<div>' + data.numberOfThings + '</div>'].join('');
-          }
-      }
+        if (data){
+          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.numberOfThings + ' '
+        } else {
+          return '<div class="hoverinfo">' + geo.properties.name
+        }
+      },
+      highlightBorderWidth: 3
     }
 
   });

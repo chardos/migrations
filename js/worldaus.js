@@ -11,7 +11,7 @@ W.init = function() {
 
 
 //CONFIG
-var arcWidth = 3;
+var arcWidth = [3,2,5,7];
 var arcColor = null;
 
 
@@ -22,7 +22,11 @@ $(document).ready(function() {
     responsive: true,
     element: document.getElementById('map'),
     projection: 'mercator',
-
+    
+    fills: {
+      defaultFill: "#262626"
+    },
+    
     data: {
       AUS: {
         fillKey: 'LOW',
@@ -40,15 +44,15 @@ $(document).ready(function() {
 
 
     geographyConfig: {
-      highlightBorderColor: '#bada55',
+      highlightBorderColor: '#ffffff',
       popupTemplate: function(geo, data) {
         if (data){
-          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.numberOfThings + ' '
+          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.numberOfThings + ' </div>'
         } else {
-          return '<div class="hoverinfo">' + geo.properties.name
+          return '<div class="hoverinfo">' + geo.properties.name + '</div>'
         }
       },
-      highlightBorderWidth: 3
+      highlightBorderWidth: 1
     }
 
   });
@@ -185,6 +189,10 @@ $(document).ready(function() {
   window.addEventListener('resize', function() {
       migrationMap.resize();
   });
+
+  window.setInterval(function() {
+    migrationMap.arc( migrationArcs, {strokeWidth: arcWidth});
+  }, 1000);
 
 
 

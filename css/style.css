@@ -27,6 +27,13 @@
 #year_slider {
   width: 100%;
   height: 60px;
+  text-align: center;
+  background-color: #1f1f1f;
+}
+
+#year_slider_ion_container {
+  width: 80%;
+  margin: auto;
 }
 
 

@@ -2,13 +2,17 @@
 var W = {}
 
 W.vars = {
-	
+	year: 1996
 };
 
 
 W.init = function() {
 }
 
+function pullDataAccordingToOptions() {
+  var chosenYear = W.vars.year;
+  alert('trigger something');
+}
 
 //CONFIG
 var arcWidth = [3,2,5,7];

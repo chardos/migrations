@@ -1,6 +1,6 @@
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);*/
 #cssmenu {
-  background: #101010;
+  background: #131313;
   width: 100%;
 }
 
@@ -34,7 +34,15 @@
   padding: 0;
   margin: 0;
   min-width: 120px;
+  border-left: 1px solid rgba(255,255,255, 0.1);
 }
+#cssmenu ul li:last-of-type {
+  border-right: 1px solid rgba(255,255,255, 0.1);
+}
+#cssmenu ul li:last-of-type a{
+  margin-right: 0;
+}
+
 #cssmenu.align-right ul li {
   float: right;
 }
@@ -43,6 +51,7 @@
 }
 #cssmenu ul li a {
   color: #888888;
+  margin-right: -4px;
   text-decoration: none;
   display: block;
   padding: 15px 25px;
@@ -81,13 +90,17 @@
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #ff6226;
+  background: #333;
   -webkit-transition: width .25s;
   -moz-transition: width .25s;
   -ms-transition: width .25s;
   -o-transition: width .25s;
   transition: width .25s;
 }
+#cssmenu ul li.active a:before {
+  background: #ff6226;
+}
+
 #cssmenu ul li.last > a:after,
 #cssmenu ul li:last-child > a:after {
   display: none;

@@ -28,8 +28,8 @@ $(document).ready(function() {
     var presidentialTrips = [
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 32.066667,
@@ -38,8 +38,8 @@ $(document).ready(function() {
         },
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 19.433333,
@@ -48,8 +48,8 @@ $(document).ready(function() {
         },
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 9.933333,
@@ -58,8 +58,8 @@ $(document).ready(function() {
         },
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 54.597 ,
@@ -68,8 +68,8 @@ $(document).ready(function() {
         },
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 52.516667,
@@ -78,8 +78,8 @@ $(document).ready(function() {
         },
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 14.692778,
@@ -88,8 +88,8 @@ $(document).ready(function() {
         },
         {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: -26.204444,
@@ -98,8 +98,8 @@ $(document).ready(function() {
         },
                 {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: -6.8,
@@ -108,8 +108,8 @@ $(document).ready(function() {
         },
                 {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 59.329444,
@@ -118,8 +118,8 @@ $(document).ready(function() {
         },
                 {
             origin: {
-                latitude: 38.895111,
-                longitude: -77.036667
+                latitude: ctry.au[0],
+                longitude: ctry.au[1]
             },
             destination: {
                 latitude: 59.95 ,

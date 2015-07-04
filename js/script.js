@@ -19,9 +19,9 @@ $(document).ready(function() {
 
   var migrationMap = new Datamap({
     scope: 'world',
+    responsive: true,
     element: document.getElementById('map'),
     projection: 'mercator',
-
 
     data: {
       AUS: {
@@ -31,13 +31,19 @@ $(document).ready(function() {
       USA: {
         fillKey: 'MEDIUM',
         numberOfThings: 10381
+      },
+      GBR: {
+        fillKey: 'MEDIUM',
+        numberOfThings: 10381
       }
     },
 
 
     geographyConfig: {
       popupTemplate: function(geo, data) {
-          return ['<div>' + data.numberOfThings + '</div>'].join('');
+          if(data){
+            return ['<div>' + data.numberOfThings + '</div>'].join('');
+          }
       }
     }
 
@@ -47,107 +53,134 @@ $(document).ready(function() {
   var migrationArcs = [
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.gb[0],
+              longitude: ctry.gb[1]
           },
           destination: {
-              latitude: 32.066667,
-              longitude: 34.783333 
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.nz[0],
+              longitude: ctry.nz[1]
           },
           destination: {
-              latitude: 19.433333,
-              longitude: -99.133333
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.cn[0],
+              longitude: ctry.cn[1]
           },
           destination: {
-              latitude: 9.933333,
-              longitude: -84.083333
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.it[0],
+              longitude: ctry.it[1]
           },
           destination: {
-              latitude: 54.597 ,
-              longitude: -5.93
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.vn[0],
+              longitude: ctry.vn[1]
           },
           destination: {
-              latitude: 52.516667,
-              longitude: 13.383333 
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.in[0],
+              longitude: ctry.in[1]
           },
           destination: {
-              latitude: 14.692778,
-              longitude: -17.446667
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
       {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              //phillipines
+              latitude: ctry.ph[0],
+              longitude: ctry.ph[1]
           },
           destination: {
-              latitude: -26.204444,
-              longitude: 28.045556
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
-              {
+      {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              //greece
+              latitude: ctry.gr[0],
+              longitude: ctry.gr[1]
           },
           destination: {
-              latitude: -6.8,
-              longitude: 39.283333 
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
-              {
+      {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.de[0],
+              longitude: ctry.de[1]
           },
           destination: {
-              latitude: 59.329444,
-              longitude: 18.068611
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       },
-              {
+      {
           origin: {
-              latitude: ctry.au[0],
-              longitude: ctry.au[1]
+              latitude: ctry.za[0],
+              longitude: ctry.za[1]
           },
           destination: {
-              latitude: 59.95 ,
-              longitude: 30.3
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
+          }
+      },
+      {
+          origin: {
+              latitude: ctry.my[0],
+              longitude: ctry.my[1]
+          },
+          destination: {
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
+          }
+      },
+      {
+          origin: {
+              latitude: ctry.in[0],
+              longitude: ctry.in[1]
+          },
+          destination: {
+              latitude: ctry.au[0],
+              longitude: ctry.au[1]
           }
       }
   ];
 
   migrationMap.arc( migrationArcs, {strokeWidth: arcWidth});
+
+
+  window.addEventListener('resize', function() {
+      migrationMap.resize();
+  });
 
 
 

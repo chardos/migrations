@@ -7,6 +7,10 @@ $(document).ready(function() {
     ],
     hide_min_max: true,
     hide_from_to: true,
-    prettify_enabled: false
+    prettify_enabled: false,
+    onChange: function (data) {
+      W.vars.year = data.from;
+      pullDataAccordingToOptions();
+    }
   });
 });

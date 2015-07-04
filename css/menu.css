@@ -63,7 +63,7 @@
   width: 100%;
 }
 #cssmenu ul li a:after {
-  content: "";
+  /*content: "";*/
   display: block;
   position: absolute;
   right: -3px;

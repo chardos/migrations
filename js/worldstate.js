@@ -87,6 +87,7 @@ $(document).ready(function() {
       defaultFill: "#262626"
     },
     
+    // state: [1996, 2001, 2006, 2011]
     data: {
       AUS: {
         vic: [2002,123,14213,512],

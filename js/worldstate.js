@@ -2,7 +2,7 @@
 var W = {}
 
 W.vars = {
-    year: 1996,
+    year: 0,
     state: 0
 };
 
@@ -38,7 +38,30 @@ function setupStateButtonActivation() {
 function pullDataAccordingToOptions() {
   var chosenYear = W.vars.year;
   var chosenState = W.vars.state;
-  alert('trigger something');
+  var buildVarName = "path";
+
+  switch(chosenState) {
+    case 0: buildVarName += "VIC"; break;
+    case 1: buildVarName += "NSW"; break;
+    case 2: buildVarName += "QLD"; break;
+    case 3: break;
+    case 4: break;
+    case 5: break;
+    case 6: break;
+    case 7: buildVarName += "TAS"; break;
+  }
+  if(buildVarName == "path")
+    return;
+
+  switch(chosenYear) {
+    case 0: buildVarName += "1996"; break;
+    case 1: buildVarName += "2001"; break;
+    case 2: buildVarName += "2006"; break;
+    case 3: buildVarName += "2011"; break;
+  }
+
+  console.log(window[buildVarName]);
+  migrationMap.arc( window[buildVarName] );
 }
 
 function triggerActive(selectedButton) {
@@ -52,10 +75,10 @@ function triggerActive(selectedButton) {
   });
 }
 
+var migrationMap;
+
 $(document).ready(function() {
-  setupStateButtonActivation();
-  $('a.btn', $($('#states_selection')[0].children[0])).click();
-  var migrationMap = new Datamap({
+  migrationMap = new Datamap({
     scope: 'world',
     responsive: true,
     element: document.getElementById('map'),
@@ -90,16 +113,15 @@ $(document).ready(function() {
 
   });
 
-  // migrationMap.arc( pathVIC );
-  migrationMap.arc (pathWA);
-
+  setupStateButtonActivation();
+  $('a.btn', $($('#states_selection')[0].children[0])).click();
 
   window.addEventListener('resize', function() {
       migrationMap.resize();
   });
 
   window.setInterval(function() {
-    migrationMap.arc( pathVIC );
+    //migrationMap.arc( pathVIC );
   }, 2000);
 
 

@@ -10,7 +10,7 @@ var pathVIC1996 = [
       options: { strokeWidth: 4.5, strokeColor: "RGBA(252, 99, 51, 0.9)"}
     },
     {
-      origin: { "latitude": ctry.nvm[0], "longitude": ctry.nvm[1] },
+      origin: { "latitude": ctry.vnm[0], "longitude": ctry.vnm[1] },
       destination: { "latitude": state.vic[0], "longitude": state.vic[1] },
       options: { strokeWidth: 4, strokeColor: "RGBA(252, 99, 51, 0.8)"}
     },
@@ -259,7 +259,7 @@ var pathVIC2011 = [
       options: { strokeWidth: 3, strokeColor: "RGBA(252, 99, 51, 0.6)"}
     },
     {
-      origin: { "latitude": ctry.nvm[0], "longitude": ctry.nvm[1] },
+      origin: { "latitude": ctry.vnm[0], "longitude": ctry.vnm[1] },
       destination: { "latitude": state.vic[0], "longitude": state.vic[1] },
       options: { strokeWidth: 2.5, strokeColor: "RGBA(252, 99, 51, 0.5)"}
     },

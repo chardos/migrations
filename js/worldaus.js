@@ -2,7 +2,9 @@
 var W = {}
 
 W.vars = {
-	year: 0
+	year: 0,
+  autoplay: false,
+  timerInterval: null
 };
 
 
@@ -17,6 +19,34 @@ function pullDataAccordingToOptions() {
     case 2: migrationMap.arc( path2006 ); break;
     case 3: migrationMap.arc( path2011 ); break;
   }
+}
+
+function stopAutoplay() {
+  window.clearInterval(W.vars.timerInterval);
+  W.vars.timerInterval = null;
+  W.vars.autoplay = false;
+}
+
+function setupAutoplay() {
+  W.vars.autoplay = true;
+  incrementDataPullByYearly();
+  W.vars.timerInterval = window.setInterval(function() {
+    incrementDataPullByYearly();
+  }, 2000);
+}
+
+function incrementDataPullByYearly() {
+  var min = $("#year_slider_ion").data().ionRangeSlider.options.min;
+  var max = $("#year_slider_ion").data().ionRangeSlider.options.max;
+  var fromToSet = $("#year_slider_ion").data().ionRangeSlider.options.from;
+  if(fromToSet >= max) {
+    fromToSet = min;
+  } else {
+    fromToSet++;
+  }
+  $("#year_slider_ion").data().ionRangeSlider.update({
+    from: fromToSet
+  });
 }
 
 //CONFIG
@@ -85,19 +115,14 @@ $(document).ready(function() {
 
   pullDataAccordingToOptions();
 
-  window.setInterval(function() {
-    //migrationMap.arc (path2001);
-    var min = $("#year_slider_ion").data().ionRangeSlider.options.min;
-    var max = $("#year_slider_ion").data().ionRangeSlider.options.max;
-    var fromToSet = $("#year_slider_ion").data().ionRangeSlider.options.from;
-    if(fromToSet >= max) {
-      fromToSet = min;
+  $('#autoplaybtn').on("click", function(){
+    $(this).toggleClass('button-active');
+    if($(this).hasClass('button-active')) {
+      // play
+      setupAutoplay();
     } else {
-      fromToSet++;
+      // stop
+      stopAutoplay();
     }
-    $("#year_slider_ion").data().ionRangeSlider.update({
-      from: fromToSet
-    });
-  }, 2000);
-
+  });
 });

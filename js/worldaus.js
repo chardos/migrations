@@ -2,7 +2,7 @@
 var W = {}
 
 W.vars = {
-	year: 1996
+	year: 0
 };
 
 
@@ -11,17 +11,23 @@ W.init = function() {
 
 function pullDataAccordingToOptions() {
   var chosenYear = W.vars.year;
-  alert('trigger something');
+  switch(chosenYear) {
+    case 0: migrationMap.arc( path1996 ); break;
+    case 1: migrationMap.arc( path2001 ); break;
+    case 2: migrationMap.arc( path2006 ); break;
+    case 3: migrationMap.arc( path2011 ); break;
+  }
 }
 
 //CONFIG
 var arcWidth = [3,2,5,7];
 var arcColor = null;
+var migrationMap;
 
 
 $(document).ready(function() {
 
-  var migrationMap = new Datamap({
+  migrationMap = new Datamap({
     scope: 'world',
     responsive: true,
     element: document.getElementById('map'),
@@ -68,14 +74,25 @@ $(document).ready(function() {
 
   });
 
-  migrationMap.arc( path1996 );
-
   window.addEventListener('resize', function() {
       migrationMap.resize();
   });
 
+  pullDataAccordingToOptions();
+
   window.setInterval(function() {
-    migrationMap.arc (path2001);
+    //migrationMap.arc (path2001);
+    var min = $("#year_slider_ion").data().ionRangeSlider.options.min;
+    var max = $("#year_slider_ion").data().ionRangeSlider.options.max;
+    var fromToSet = $("#year_slider_ion").data().ionRangeSlider.options.from;
+    if(fromToSet >= max) {
+      fromToSet = min;
+    } else {
+      fromToSet++;
+    }
+    $("#year_slider_ion").data().ionRangeSlider.update({
+      from: fromToSet
+    });
   }, 2000);
 
 });

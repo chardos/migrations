@@ -7,8 +7,8 @@
   text-align:center;
   color:#7f8c8d;
   cursor:pointer;
-  background:#2c3e50;
-  border-bottom:10px solid #34495e;
+  background:#383838;
+  border-bottom:10px solid #464646;
   transition-property:border-bottom .6s linear 0s;
   -moz-transition:border-bottom .6s linear 0s;
   -webkit-transition:border-bottom .6s linear 0s;
@@ -16,8 +16,8 @@
   font-size:25px;
 }
 .btn.active {
-  border-bottom:10px solid #2ecc71;
-  color:#2ecc71;
+  border-bottom:10px solid #ff6226;
+  color:#ff6226;
 }
 .button-group-navigation li {
   display:inline-block;

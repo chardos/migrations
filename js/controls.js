@@ -11,6 +11,10 @@ $(document).ready(function() {
     onChange: function (data) {
       W.vars.year = data.from;
       pullDataAccordingToOptions();
+    },
+    onUpdate: function (data) {
+      W.vars.year = data.from;
+      pullDataAccordingToOptions();
     }
   });
 });

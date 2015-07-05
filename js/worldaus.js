@@ -39,7 +39,7 @@ $(document).ready(function() {
         y2011: 21312412
       },
       USA: {
-        y1996: 2002,
+        y1996: 8291471284,
         y2001: 221312312,
         y2006: 2312321,
         y2011: 21312412
@@ -58,7 +58,12 @@ $(document).ready(function() {
       highlightBorderColor: '#ffffff',
       popupTemplate: function(geo, data) {
         if (data){
-          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.y1996 + ' </div>'
+          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>' +
+            '1996 : ' +  data.y1996 + '<br/>' +
+            '2001 : ' +  data.y2001 + '<br/>' +
+            '2006 : ' +  data.y2006 + '<br/>' +
+            '2011 : ' +  data.y2011 + '<br/>' +
+            ' </div>'
         } else {
           return '<div class="hoverinfo">' + geo.properties.name + '</div>'
         }

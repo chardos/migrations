@@ -1,13 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
 
 .btn {
-  padding:40px 30px 30px 30px;
+  padding:20px 30px 20px 30px;
   margin:0 1px 0 0;
   text-decoration:none;
   text-align:center;
+  vertical-align: center;
   color:#7f8c8d;
   cursor:pointer;
-  background:#383838;
+  background:#131313;
   border-bottom:10px solid #464646;
   transition-property:border-bottom .6s linear 0s;
   -moz-transition:border-bottom .6s linear 0s;

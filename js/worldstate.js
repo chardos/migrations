@@ -44,10 +44,10 @@ function pullDataAccordingToOptions() {
     case 0: buildVarName += "VIC"; break;
     case 1: buildVarName += "NSW"; break;
     case 2: buildVarName += "QLD"; break;
-    case 3: break;
-    case 4: break;
-    case 5: break;
-    case 6: break;
+    case 3: buildVarName += "SA"; break;
+    case 4: buildVarName += "WA"; break;
+    case 5: buildVarName += "ACT"; break;
+    case 6: buildVarName += "NT"; break;
     case 7: buildVarName += "TAS"; break;
   }
   if(buildVarName == "path")
@@ -88,7 +88,36 @@ $(document).ready(function() {
     },
     
     data: {
-      
+      AUS: {
+        vic: [2002,123,14213,512],
+        nsw: [53326434,574753,325235,43634634],
+        qld: [214124,12412412,4124124,1241412],
+        sa: [12312,124123,124421,21412],
+        wa: [1231231,1424123,2141231,231213],
+        act: [3252352,643634,32525,32523523],
+        nt: [4123123,12412312,41241241,241241],
+        tas: [325235,23523523,2412312,2352345]
+      },
+      USA: {
+        vic: [2002,123,14213,512],
+        nsw: [53326434,574753,325235,43634634],
+        qld: [214124,12412412,4124124,1241412],
+        sa: [12312,124123,124421,21412],
+        wa: [1231231,1424123,2141231,231213],
+        act: [3252352,643634,32525,32523523],
+        nt: [4123123,12412312,41241241,241241],
+        tas: [325235,23523523,2412312,2352345]
+      },
+      GBR: {
+        vic: [2002,123,14213,512],
+        nsw: [53326434,574753,325235,43634634],
+        qld: [214124,12412412,4124124,1241412],
+        sa: [12312,124123,124421,21412],
+        wa: [1231231,1424123,2141231,231213],
+        act: [3252352,643634,32525,32523523],
+        nt: [4123123,12412312,41241241,241241],
+        tas: [325235,23523523,2412312,2352345]
+      }
     },
 
     arcConfig: {
@@ -101,8 +130,28 @@ $(document).ready(function() {
     geographyConfig: {
       highlightBorderColor: '#ffffff',
       popupTemplate: function(geo, data) {
+        
         if (data){
-          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>Immigrants #:' +  data.numberOfThings + ' </div>'
+          var currentState;
+
+          switch(W.vars.state) {
+            case 0: currentState = 'vic'; break;
+            case 1: currentState = 'nsw'; break;
+            case 2: currentState = 'qld'; break;
+            case 3: currentState = 'sa'; break;
+            case 4: currentState = 'wa'; break;
+            case 5: currentState = 'act'; break;
+            case 6: currentState = 'nt'; break;
+            case 1: currentState = 'tas'; break;
+          }
+
+
+          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>' +
+            '1996 : ' +  data[currentState][0] + '<br/>' +
+            '2001 : ' +  data[currentState][1] + '<br/>' +
+            '2006 : ' +  data[currentState][2] + '<br/>' +
+            '2011 : ' +  data[currentState][3] + '<br/>' +
+            ' </div>'
         } else {
           return '<div class="hoverinfo">' + geo.properties.name + '</div>'
         }

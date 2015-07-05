@@ -176,7 +176,7 @@ var pathsa2006 = [
       options: { strokeWidth: 3.5, strokeColor: "RGBA(252, 99, 51, 0.7)"}
     },
     {
-      origin: { "latitude": ctry.phi[0], "longitude": ctry.phi[1] },
+      origin: { "latitude": ctry.phl[0], "longitude": ctry.phl[1] },
       destination: { "latitude": state.sa[0], "longitude": state.sa[1] },
       options: { strokeWidth: 3, strokeColor: "RGBA(252, 99, 51, 0.6)"}
     },

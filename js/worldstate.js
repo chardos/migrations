@@ -60,7 +60,6 @@ function pullDataAccordingToOptions() {
     case 3: buildVarName += "2011"; break;
   }
 
-  console.log(window[buildVarName]);
   migrationMap.arc( window[buildVarName] );
 }
 
@@ -121,11 +120,17 @@ $(document).ready(function() {
   });
 
   window.setInterval(function() {
-    //migrationMap.arc( pathVIC );
+    var min = $("#year_slider_ion").data().ionRangeSlider.options.min;
+    var max = $("#year_slider_ion").data().ionRangeSlider.options.max;
+    var fromToSet = $("#year_slider_ion").data().ionRangeSlider.options.from;
+    if(fromToSet >= max) {
+      fromToSet = min;
+    } else {
+      fromToSet++;
+    }
+    $("#year_slider_ion").data().ionRangeSlider.update({
+      from: fromToSet
+    });
   }, 2000);
-
-
-
-
     
 });

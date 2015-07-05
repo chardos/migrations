@@ -1227,7 +1227,8 @@ $(document).ready(function() {
       highlightBorderColor: '#ffffff',
       popupTemplate: function(geo, data) {
         if (data){
-          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>' +
+          return '<div class="hoverinfo">' + 'Country of birth: '+geo.properties.name + '<br/><br/>' +
+            'Number of people born in this country' + '<br/>' +
             '1996 : ' +  data.y1996 + '<br/>' +
             '2001 : ' +  data.y2001 + '<br/>' +
             '2006 : ' +  data.y2006 + '<br/>' +

@@ -177,12 +177,13 @@ $(document).ready(function() {
           }
 
 
-          return '<div class="hoverinfo">' + geo.properties.name + '<br/><br/>' +
+          return '<div class="hoverinfo">' + 'Country of birth: '+geo.properties.name + '<br/><br/>' +
+            'Number of people born in this country' + '<br/>' +
             '1996 : ' +  data[currentState][0] + '<br/>' +
             '2001 : ' +  data[currentState][1] + '<br/>' +
             '2006 : ' +  data[currentState][2] + '<br/>' +
             '2011 : ' +  data[currentState][3] + '<br/>' +
-            ' </div>'
+            ' </div>';
         } else {
           return '<div class="hoverinfo">' + geo.properties.name + '</div>'
         }

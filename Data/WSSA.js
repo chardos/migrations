@@ -1,4 +1,4 @@
-var pathsa1996 = [
+var pathSA1996 = [
     {
       origin: { "latitude": ctry.ita[0], "longitude": ctry.ita[1] },
       destination: { "latitude": state.sa[0], "longitude": state.sa[1] },
@@ -76,7 +76,7 @@ var pathsa1996 = [
     }
 ];
 
-var pathsa2001 = [
+var pathSA2001 = [
     {
       origin: { "latitude": ctry.gbr[0], "longitude": ctry.gbr[1] },
       destination: { "latitude": state.sa[0], "longitude": state.sa[1] },
@@ -154,7 +154,7 @@ var pathsa2001 = [
     }
 ];
 
-var pathsa2006 = [
+var pathSA2006 = [
     {
       origin: { "latitude": ctry.gbr[0], "longitude": ctry.gbr[1] },
       destination: { "latitude": state.sa[0], "longitude": state.sa[1] },
@@ -232,7 +232,7 @@ var pathsa2006 = [
     }
 ];
 
-var pathsa2011 = [
+var pathSA2011 = [
     {
       origin: { "latitude": ctry.gbr[0], "longitude": ctry.gbr[1] },
       destination: { "latitude": state.sa[0], "longitude": state.sa[1] },
